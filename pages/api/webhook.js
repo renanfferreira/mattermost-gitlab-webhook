@@ -15,11 +15,11 @@ const mountTextMessage = body => {
 }
 
 const getMmHook = reqBody => {
-  const namespace = reqBody.project.namespace
+  const url = reqBody.project.url
 
-  if(namespace === process.env.BACKEND_NAMESPACE) {
+  if(url.indexOf(process.env.BACKEND_NAMESPACE) > -1) {
     return process.env.BACKEND_MM_HOOK
-  } else if (namespace === process.env.FRONTEND_NAMESPACE) {
+  } else if (url.indexOf(process.env.FRONTEND_NAMESPACE) > -1) {
     return process.env.FRONTEND_MM_HOOK
   } else {
     throw 'Unknow namespace'

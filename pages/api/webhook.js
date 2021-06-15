@@ -21,6 +21,8 @@ const getMmHook = reqBody => {
     return process.env.BACKEND_MM_HOOK
   } else if (url.indexOf(process.env.FRONTEND_NAMESPACE) > -1) {
     return process.env.FRONTEND_MM_HOOK
+  } else if(url.indexOf(process.env.DATABASE_NAMESPACE) > -1) {
+    return process.env.BACKEND_MM_HOOK
   } else {
     throw 'Unknow namespace'
   }
@@ -28,7 +30,6 @@ const getMmHook = reqBody => {
 
 const sendTextMessage = async reqBody => {
   const textMessage = mountTextMessage(reqBody)
-  console.log(textMessage.text.length)
 
   const mmHook = getMmHook(reqBody)
 

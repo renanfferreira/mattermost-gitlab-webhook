@@ -55,7 +55,7 @@ const sendTextMessages = async reqBody => {
   }
 }
 
-router.post('/', async (req, res, next) => {
+router.post('/', async (req, res) => {
   try {
     const reqBody = req.body
   

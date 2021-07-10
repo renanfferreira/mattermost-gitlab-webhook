@@ -1,6 +1,9 @@
 # Webhook - MRs Gitlab x Mattermost
 Este projeto tem interesse em servir como webhook utilizado para enviar mensagens a canais mattermost, quando um merge request Gitlab for aberto.
 
+![image](https://user-images.githubusercontent.com/16538201/125167863-fe144b00-e178-11eb-8cd0-1b72dca8ca8d.png)
+
+
 ## Como utilizar?
 Vamos utilizar como exemplo, um projeto onde temos 2 repositórios backend e 2 repositórios frontend, e desejamos receber mensagens de MRs abertos nesses repositórios de forma separada, em canais diferentes.
 

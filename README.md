@@ -8,12 +8,10 @@ Este projeto tem interesse em servir como webhook utilizado para enviar mensagen
 Vamos utilizar como exemplo, um projeto onde temos 2 repositórios backend e 2 repositórios frontend, e desejamos receber mensagens de MRs abertos nesses repositórios de forma separada, em canais diferentes.
 
 ### Hospedagem
-Precisaremos ter uma url disponível para o gitlab realizar requisições ao nosso webhook, portanto, é necessário hospedar o projeto em um servidor node. Utilizaremos o Heroku neste exemplo. Url gerada: `https://mattermost-gitlab-webook.herokuapp.com/`
+Precisaremos ter uma url disponível para o gitlab realizar requisições ao nosso webhook, portanto, é necessário hospedar o projeto em um servidor node. Utilizaremos o Heroku neste exemplo.
 
 ### Mattermost
 No mattermost, é necessário criar webhooks de entrada nos canais que deseja receber mensagens de merge requests abertos. Para tal, vá no menu Integrações.
-
-![image](https://user-images.githubusercontent.com/16538201/125124084-eaf87100-e0cd-11eb-8bfa-e58c4fde6bb7.png)
 
 Em seguida, Webhooks Entrada
 
@@ -28,8 +26,6 @@ Preencha os dados do formulário e clique em `Salvar`
 ![image](https://user-images.githubusercontent.com/16538201/125124976-542cb400-e0cf-11eb-8097-777131dab0d9.png)
 
 Guarde a URL gerada
-
-![image](https://user-images.githubusercontent.com/16538201/125125037-6d356500-e0cf-11eb-9dc0-8a7674c008a7.png)
 
 Repita o mesmo processo para o canal de MRs frontend
 
@@ -51,16 +47,16 @@ Agora precisamos adicionar algumas variáveis de ambiente no servidor onde foi r
 `Secret token` que foi utilizado na hora de adicionar os webhooks no Gitlab. Neste exemplo, utilizamos `84316468-5999-421f-acae-a468e5e23a67`
 
 #### PROJECT_BACKEND_MM_WEBHOOKS
-Webhook que criamos no mattermost para o backend. Pode ser mais de um, separados por `,` caso desejável. Neste exemplo, utilizamos `https://chat.acclabs.com.br/hooks/u9n8njxeup8d7mdybn5tbjbs8a`
+Webhook que criamos no mattermost para o backend. Pode ser mais de um, separados por `,` caso desejável. Neste exemplo, utilizamos `https://chat.example.com.br/hooks/u9n8njxeup8d7mdybn5tbjbs8a`
 
 #### PROJECT_BACKEND_URLS
-Urls dos projetos backend, separados por `,`. Pode ser utilizado parte da url. Neste exemplo, utilizamos `arca/arca2006crmf1/arca-backend,arca/arca2006crmf1/arca-database`
+Urls dos projetos backend, separados por `,`. Pode ser utilizado parte da url. Neste exemplo, utilizamos `project-backend,project-database`
 
 #### PROJECT_FRONTEND_MM_WEBHOOKS
-Webhook que criamos no mattermost para o frontend. Pode ser mais de um, separados por `,` caso desejável. Neste exemplo, utilizamos `https://chat.acclabs.com.br/hooks/e51m8g9t9jbt8x6pwmnyyk6a7c`
+Webhook que criamos no mattermost para o frontend. Pode ser mais de um, separados por `,` caso desejável. Neste exemplo, utilizamos `https://chat.example.com.br/hooks/e51m8g9t9jbt8x6pwmnyyk6a7c`
 
 #### PROJECT_FRONTEND_MM_WEBHOOKS
-Urls dos projetos frontend, separados por `,`. Pode ser utilizado parte da url. Neste exemplo, utilizamos `arca/arca2006crmf1/arca-front`
+Urls dos projetos frontend, separados por `,`. Pode ser utilizado parte da url. Neste exemplo, utilizamos `project-front`
 
 -----
 
